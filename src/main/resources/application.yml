@@ -1,0 +1,24 @@
+server:
+  port: 9999
+magic-api:
+  web: /
+  resource:
+    location: /opt/magic-api/data
+  security:
+    username: admin
+    password: 123456
+  swagger:
+    version: 1.0
+    description: MagicAPI 接口信息
+    title: MagicAPI Swagger Docs
+    name: MagicAPI 接口
+    location: /v2/api-docs/magic-api/swagger2.json
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.110.54:3306/magic_api_show?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: Supcon_21
