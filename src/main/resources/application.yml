@@ -3,7 +3,16 @@ server:
 magic-api:
   web: /
   resource:
-    location: /opt/magic-api/data
+#    /opt/magic-api/data
+#    /Users/wuque/Documents/items/freedom/magic-api8/data
+    location: /data/app/magic-api/data
+  auto-import-package: java.lang.*,java.util.* #自动导包
+  editor-config: classpath:./magic-editor.js #编辑器配置
+  backup: #备份相关配置
+    enable: true #是否启用
+    max-history: 30 #备份保留天数，-1为永久保留
+#    datasource: magic  #指定数据源（单数据源时无需配置，多数据源时默认使用主数据源，如果存在其他数据源中需要指定。）
+    table-name: magic_backup_record_v2 #使用数据库存储备份时的表名
   security:
     username: admin
     password: 123456
@@ -19,6 +28,6 @@ spring:
       matching-strategy: ant_path_matcher
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://192.168.110.54:3306/magic_api_show?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://192.168.217.35:31533/magic_api_show?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
     username: root
-    password: Supcon_21
+    password: 1qaz2wsx
